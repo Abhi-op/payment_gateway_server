@@ -1,0 +1,24 @@
+{
+        "order_number":978237,
+        "company_name":"Amazon",
+        "products":[
+           {
+              "item":"watch",
+              "descreption":"wrist watch",
+              "quantity":1,
+              "price":30
+           }
+        ],
+        "subtotal":30,
+        "convienance_fee":10,
+        "total":40,
+        "payment_status":false,
+        "payemt_history":{
+           
+        },
+        "date":{
+           "billing_Date":"15-03-2023",
+           "due_Date":"16-04-2023"
+        },
+        "text":""
+     }
