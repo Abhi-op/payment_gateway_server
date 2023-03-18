@@ -1,10 +1,11 @@
 
- const HttpStatus = require('http-status');
- const Invoice = require("../model/invoice_model")
+const HttpStatus = require('http-status');
+const Invoice = require("../model/invoice_model")
 const Insta = require('instamojo-nodejs');
 const url = require('url');
 const httpStatus = require('http-status');
 
+const BASE_URL = process.env.BASE_URL;
 
 exports.pay = ( req, res ) => {
 	Insta.setKeys(process.env.API_KEY, process.env.AUTH_KEY);
@@ -64,8 +65,8 @@ exports.paymentDetails = (req,res) =>{
 		.then( ( UpdatedInvoice ) => res.json(UpdatedInvoice))
 		.catch( ( errors ) => console.log(errors) );
 
-		// Redirect the user to payment complete page.
-		return res.redirect(`REDIRECT_URL/${order_number}`);
+		// Redirect the user to payment complete page
+		return res.redirect(`${BASE_URL}/paymentSuccess/${order_number}`);
 	}
 		
 	} catch (error) {
