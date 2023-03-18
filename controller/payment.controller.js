@@ -75,3 +75,15 @@ exports.paymentDetails = (req,res) =>{
 	}
 	
 }
+
+exports.addData = (req, res) => {
+	try {
+		let data = req.body;
+		console.log(req);
+		let resp = Invoice.insertMany(data);
+		return res.status(200).send({ data: data, res: resp }); 
+	} catch (error) {
+		throw error;
+		res.status(500);
+	}
+}

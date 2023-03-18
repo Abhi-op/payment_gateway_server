@@ -10,6 +10,7 @@ router.get("/getAll",PaymentController.getAllInvoice);
  
 router.get("/payment/verify",PaymentController.paymentDetails)
 
+router.post("/addData", PaymentController.addData);
 
 
 module.exports = router
